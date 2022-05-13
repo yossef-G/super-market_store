@@ -1,112 +1,5 @@
-// import { useState } from 'react'
-// import { Card, CardHeader, CardContent, CardFooter } from './Card'
-
-// const items = [{
-//   id: 'fdsfsd', img: 'https://images.unsplash.com/photo-1550258987-190a2d41a8ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80&#39',
-//   price: '5$ for kg',
-//   name: 'Pineapple',
-//   vitamin: ["c", "b"]
-// }, {
-//   id: 'asd332', img: 'https://images.unsplash.com/photo-1528825871115-3581a5387919?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80&#39',
-//   price:  '3$ for kg',
-//   name: 'Banana',
-//   vitamin: ["a", "b"]
-// }, {
-//   id: 'sadahg5', img: 'https://images.unsplash.com/photo-1557800636-894a64c1696f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80&#39',
-//   price:  '2$ for kg',
-//   name: 'Orange',
-//   vitamin: ["c", "b"]
-// }, {
-//   id: 'ds21sad', img: 'https://images.unsplash.com/photo-1585059895524-72359e06133a?ixlib=rb-1.2.1&ixid=https://images.unsplash.com/photo-1550258987-190a2d41a8ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80&#39&auto=format&fit=crop&w=870&q=80&#39',
-//   price:  '7$ for kg',
-//   name: 'Kiwi',
-//   vitamin: ["b"]
-// }, {
-//   id: 'sdfsdf8767',
-//   img: "https://images.unsplash.com/photo-1528825871115-3581a5387919?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80&#39",
-//   price: '5$ for kg',
-//   name: 'Melon',
-//   vitamin: ["c"]
-// },]
-
-// // console.log(fruitsFiltered(2));
-// // const itemsCard = items.map(item => <Card key={item.id} img={item.img} name={item.name} price={item.price} />)
-
-// function App() {
-//   const [fruits, setFruits] = useState(items)
-
-//   const fruitsFiltered = (index) => {
-//     let res = fruits.filter((v, i) => i !== index)
-//     setFruits(res)
-//   }
-
-//   const filterByV = (vit, checked) => {
-//     let res = checked ? items.filter((v) => v.vitamin.includes(vit)) : items
-//     setFruits(res)
-//   }
-
-//   const range = () => {
-//     let range = document.getElementById("price");
-//     let lbl = document.getElementById("lbl-price");
-//     lbl.innerText = `<<<<<${range.value}>>>>`
-//   }
-//   return (
-//     <div>
-//         <h1>Y-G market</h1>
-//       <div id="filter">
-//         <input id="price" type="range" min="0"  max="200" step="1" onInput={range} />
-//         <label id="lbl-price" htmlFor="price" >price</label>
-//         <div className="form" onChange={(e) => console.log(e)}>
-//           <label for="v-c" > Vitamin C </label>
-//           <input id="v-c" type="checkbox" name="vitamin-c" value="c" onChange={(e) => { filterByV(e.target.value, e.target.checked); }} />
-//         </div>
-//         <div>
-//           <label for="v-B" > Vitamin B </label>
-//           <input id="v-B" type="checkbox" name="vitamin-b" value="b" onChange={(e) => { filterByV(e.target.value, e.target.checked); }}/>
-//         </div>
-//       </div>
-
-//       <div className="items">
-//         {fruits.map((item, index) => {
-//           return (
-//             <Card key={item.id}>
-//               <CardHeader>
-//                 {
-//                   (item.img) ?
-//                   <a href='https://www.google.com'><img src={item.img} alt="Avatar" /></a> : ''
-//                 }
-//               </CardHeader>
-//               {(true) ?
-//                 <CardContent>
-//                   <h4><b ><a href='https://www.google.com'>{item.name}</a></b></h4>
-//                   <h4><b ><a href='https://www.google.com'>{item.price}</a></b></h4>
-//                 </CardContent> : <></>
-//               }
-//               <CardFooter>
-//                 {/* {(index % 2 == 0) ? */}
-//                 {/* <p>{item.price}</p> : */}
-//                 <button onClick={() => fruitsFiltered(index)}>Remove me</button>
-//                 {/* } */}
-//               </CardFooter>
-//             </Card>
-
-//             // <Card key={item.id} img={item.img} name={item.name} price={item.price} />
-//           )
-//         })}
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default App
-
-
-
-
-// ####################################################################
-
 import React from 'react';
-
+  
 class DemoForm extends React.Component {
     constructor() {
     super();
@@ -181,7 +74,7 @@ class DemoForm extends React.Component {
   
       if (typeof input["password"] !== "undefined" && typeof input["confirm_password"] !== "undefined") {
           
-        if (input["password"] !== input["confirm_password"]) {
+        if (input["password"] != input["confirm_password"]) {
           isValid = false;
           errors["password"] = "Passwords don't match.";
         }
@@ -197,7 +90,7 @@ class DemoForm extends React.Component {
   render() {
     return (
       <div>
-        <h1>React Forum</h1>
+        <h1>React Password and Confirm Password Validation Example - ItSolutionStuff.com</h1>
         <form onSubmit={this.handleSubmit}>
   
           <div class="form-group">
